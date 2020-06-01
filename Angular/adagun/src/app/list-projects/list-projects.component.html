@@ -1,0 +1,33 @@
+<h1>Projects</h1>
+
+<div class="container">
+
+  <div class="alert alert-success" *ngIf="message"> {{message}}</div>
+
+  <table class="table">
+    <thead>
+    <tr>
+      <th> Name </th>
+      <th> Description  </th>
+      <th> Github  </th>
+      <th *ngIf="isLoggedIn" > Edit  </th>
+      <th *ngIf="isLoggedIn"  > Delete  </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let project of projects">
+        <th> {{project.name}} </th>
+        <th> {{project.description}} </th>
+        <th> <a href="{{project.url}}"> {{project.url}}</a> </th>
+        <th *ngIf="isLoggedIn" > <button (click)="updateProject(project.id)" class="btn btn-success" >Edit</button> </th>
+        <th *ngIf="isLoggedIn" > <button (click)="deleteProject(project.id)" class="btn btn-warning" >Delete</button> </th>
+    </tr>
+
+    </tbody>
+  </table>
+
+  <div *ngIf="isLoggedIn"  class="row">
+    <button (click)="addProject()" class="btn btn-success">Add</button>
+  </div>
+
+</div>

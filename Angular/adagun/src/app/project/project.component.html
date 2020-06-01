@@ -1,0 +1,20 @@
+<div class="container">
+  <form (ngSubmit)="!projectForm.invalid && saveProject()" #projectForm="ngForm">
+  <fieldset class="form-group">
+    <label>Name</label>
+    <input type="text" #name="ngModel" [(ngModel)]="project.name" class="form-control" name="name" required="required">
+  </fieldset>
+
+  <fieldset class="form-group">
+    <label>Description</label>
+    <input type="text" #description="ngModel" [(ngModel)]="project.description" class="form-control" name="description" required="required">
+  </fieldset>
+  <fieldset class="form-group">
+    <label>URL</label>
+    <input type="text" #url="ngModel" [(ngModel)]="project.url" class="form-control" name="url" required="required">
+  </fieldset>
+    <div class="alert alert-warning" *ngIf="projectForm.dirty && projectForm.invalid ">Please fill out all the fields </div>
+    <button type="submit" class="btn btn-success">Save</button>
+
+    </form>
+</div>
