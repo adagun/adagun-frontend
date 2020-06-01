@@ -43,7 +43,7 @@ export class AuthService {
   executeJWTAuthenticationService(username, password)
   {
 
-     return this.httpClient.post<any>(`${API_URL}/authenticate`, {username, password})
+     return this.httpClient.post<any>(`/authenticate`, {username, password})
        // return data to subscriber
        .pipe(map(data => {
          sessionStorage.setItem(AUTHENTICATED_USER, username)

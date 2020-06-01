@@ -14,26 +14,26 @@ export class ProjectDataService {
 
     retrieveAllProjects(username)
   {
-    return this.httpClient.get<Project[]>(`${JPA_API_URL}/users/${username}/projects`)
+    return this.httpClient.get<Project[]>(`/jpa/users/${username}/projects`)
   }
 
     deleteProject(username, id) {
 
-      return this.httpClient.delete(`${JPA_API_URL}/users/${username}/projects/${id}`)
+      return this.httpClient.delete(`/jpa/users/${username}/projects/${id}`)
 
   }
 
     retrieveProject(username, id) {
-    return this.httpClient.get<Project>(`${JPA_API_URL}/users/${username}/projects/${id}`)
+    return this.httpClient.get<Project>(`/jpa/users/${username}/projects/${id}`)
 
   }
 
     updateProject(username, id, project) {
-    return this.httpClient.put(`${JPA_API_URL}/users/${username}/projects/${id}`, project)
+    return this.httpClient.put(`/jpa/users/${username}/projects/${id}`, project)
 
   }
       createProject(username, project) {
-    return this.httpClient.post(`${JPA_API_URL}/users/${username}/projects/`, project)
+    return this.httpClient.post(`/jpa/users/${username}/projects/`, project)
 
   }
 
