@@ -11,14 +11,14 @@
       <th> Description  </th>
       <th> Github  </th>
       <th *ngIf="isLoggedIn" > Edit  </th>
-      <th *ngIf="isLoggedIn"  > Delete  </th>
+      <th *ngIf="isLoggedIn" > Delete  </th>
     </tr>
     </thead>
     <tbody>
     <tr *ngFor="let project of projects">
         <th> {{project.name}} </th>
         <th> {{project.description}} </th>
-        <th> <a href="{{project.url}}"> {{project.url}}</a> </th>
+        <th> <a href="{{'http://' + project.url}}"> {{project.url}}</a> </th>
         <th *ngIf="isLoggedIn" > <button (click)="updateProject(project.id)" class="btn btn-success" >Edit</button> </th>
         <th *ngIf="isLoggedIn" > <button (click)="deleteProject(project.id)" class="btn btn-warning" >Delete</button> </th>
     </tr>
