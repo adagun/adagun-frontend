@@ -17,13 +17,11 @@ const routes: Routes = [
   { path: "projects/:id", component: ProjectComponent, canActivate: [RouteGuardService] },
   { path:"login", component: LoginComponent },
   { path:"logout", component: LogoutComponent, canActivate: [RouteGuardService] },
-
-
   { path:"**", component: ErrorComponent }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { useHash: true })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
